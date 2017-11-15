@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 import {fetchPosts} from '../actions';
 import _ from 'lodash';
-
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 class PostsIndex extends React.Component{
   constructor(){
     super();
@@ -24,6 +24,11 @@ class PostsIndex extends React.Component{
     });
   }
   render(){
+    const transitionOptions={
+      transitionName:"fade",
+      transitionEnterTimeout:500,
+      transitionLeaveTimeout:500
+    };
     return(
       <div>
         <div className="text-xs-right">
@@ -32,7 +37,11 @@ class PostsIndex extends React.Component{
           </Link>
         </div>
         <h3>Posts</h3>
-        <ul className="list-group">{this.renderPosts()}</ul>
+        <ul className="list-group">
+          <ReactCSSTransitionGroup {...transitionOptions}>
+            {this.renderPosts()}
+          </ReactCSSTransitionGroup>
+        </ul>
       </div>
     );
   }

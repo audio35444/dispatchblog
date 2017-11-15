@@ -10,3 +10,22 @@
 .margin-right{
   margin-right: 5px;
 }
+/*starting animation*/
+.fade-enter{
+  transform: rotateX(45deg) rotateZ(45deg);
+  opacity: 0;
+}
+/*ending animation*/
+.fade-enter-active{
+  transform: rotateX(0deg) rotateZ(0deg);
+  opacity: 1.0;
+  transition: .5s ease-in all;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+.fade-leave-active{
+  opacity: 0;
+  transition: .5s ease-out all;
+}

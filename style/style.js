@@ -17,5 +17,21 @@ export default StyleSheet.create({
     },
     "margin-right": {
         "marginRight": 5
+    },
+    "fade-enter": {
+        "transform": "rotateX(45deg) rotateZ(45deg)",
+        "opacity": 0
+    },
+    "fade-enter-active": {
+        "transform": "rotateX(0deg) rotateZ(0deg)",
+        "opacity": 1,
+        "transition": ".5s ease-in all"
+    },
+    "fade-leave": {
+        "opacity": 1
+    },
+    "fade-leave-active": {
+        "opacity": 0,
+        "transition": ".5s ease-out all"
     }
 });
